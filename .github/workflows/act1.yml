@@ -3,12 +3,12 @@ on: [push]
 jobs:
   start-and-stop:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      # run: npm install winston
-      # run: node index
-      - run: node ./.github/scripts/check
-        with: # Set the secret as an input
-          API_KEY: ${{ secrets.AG_CLIENT_SECRET }}
-      
+    env: # Set the secret as an input
+      API_KEY: ${{ secrets.AG_CLIENT_SECRET }}
+    steps: 
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+        # - run: npm install winston
+        # - run: node index
+        - run: node ./.github/scripts/check
+        
