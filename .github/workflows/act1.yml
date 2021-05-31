@@ -4,7 +4,6 @@ jobs:
   start-and-stop:
     runs-on: ubuntu-latest
     steps:
-      - name: Run a node program that uses an external service that requires an API Key
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       # run: npm install winston
