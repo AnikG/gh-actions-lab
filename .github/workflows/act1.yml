@@ -4,11 +4,11 @@ jobs:
   start-and-stop:
     runs-on: ubuntu-latest
     steps:
-      name: Run a node program that uses an external service that requires an API Key
-      with: # Set the secret as an input
+      - name: Run a node program that uses an external service that requires an API Key
+      - with: # Set the secret as an input
           API_KEY: ${{ secrets.AG_CLIENT_SECRET }}
-      uses: actions/checkout@v2
-      uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
       # run: npm install winston
       # run: node index
-      run: node ./.github/scripts/check
+      - run: node ./.github/scripts/check
