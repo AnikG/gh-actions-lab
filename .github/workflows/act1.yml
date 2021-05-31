@@ -1,0 +1,11 @@
+name: action-1
+on: [push]
+jobs:
+  start-and-stop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install winston
+      - run: node index
+      
